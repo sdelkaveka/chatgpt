@@ -98,7 +98,7 @@ dc_clear:
 # Pull changes
 pull:
 	@echo "Pulling changes from origin master..."
-	git pull origin master
+	git pull chatgpt main
 
 help:
 	@echo ""
@@ -114,7 +114,7 @@ help:
 	@echo "$(YELLOW)remigrate$(NC)        : Make new migrations."
 	@echo "$(YELLOW)dc$(NC)               : Run the docker-compose."
 	@echo "$(YELLOW)dc_clear$(NC)         : Clear all docker-compose data."
-	@echo "$(YELLOW)pull$(NC)             : Pulls changes from master branch."
+	@echo "$(YELLOW)pull$(NC)             : Pulls changes from main branch."
 	@echo "$(YELLOW)linter$(NC)           : Runs linter checks."
 	@echo "$(YELLOW)loaddata$(NC)         : Loads data from fixtures."
 	@echo ""
