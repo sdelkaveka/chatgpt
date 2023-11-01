@@ -1,21 +1,8 @@
-from rest_framework.mixins import CreateModelMixin
-from rest_framework.viewsets import GenericViewSet
-
-from .models import Announcement, Post
-from .serializers import AnnouncementSerializer, PostSerializer
+from rest_framework.decorators import api_view
+from .prompts.vk import get_vk_response
+from rest_framework.request import Request
 
 
-class AnnouncementViewSet(
-    GenericViewSet,
-    CreateModelMixin
-):
-    serializer_class = AnnouncementSerializer
-    queryset = Announcement.objects.all()
-
-
-class PostViewSet(
-    GenericViewSet,
-    CreateModelMixin
-):
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()
+@api_view(['post'])
+def vk_ad(request: Request):
+    return get_vk_response(request)

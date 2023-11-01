@@ -1,17 +1,7 @@
-from django.urls import include, path
-from rest_framework.routers import SimpleRouter
+from django.urls import path  # include
+from .views import vk_ad
 
-from .views import AnnouncementViewSet, PostViewSet
-
-router = SimpleRouter()
-router.register(
-    'announcement',
-    AnnouncementViewSet
-)
-router.register(
-    'posts',
-    PostViewSet
-)
 urlpatterns = [
-    path('', include(router.urls)),
+    path('vk', vk_ad,)
+    # path('', include()),
 ]
