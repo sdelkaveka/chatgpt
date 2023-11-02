@@ -29,7 +29,7 @@ def get_vk_response(request: Request):
     dropdown2 = data.get('dropdown2', '')         # Призыв к действию
     dropdown3 = data.get('dropdown3', '')         # Уровень творчества
     # Кол-во Символов на Отчет чата.
-    dropdown4 = float(data.get('dropdown4', ''))
+    dropdown4 = int(data.get('dropdown4', ''))
 
     if dropdown3.strip():  # Hе пустое ли значение Уровень творчества
         # Преобразуем в число и делим на 10 Уровень творчества
