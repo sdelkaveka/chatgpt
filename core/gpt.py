@@ -1,11 +1,11 @@
 
 import openai
 from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
 
 from .token_price import count_tokens_and_price, price_from_tokens
 from .validators import validate_prompt
 from chatgpt.settings import env
-from rest_framework.response import Response
 
 
 def handle_gpt3(

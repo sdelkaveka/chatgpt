@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
-from .prompts.vk import get_vk_response
 from rest_framework.request import Request
+
+from prompts.vk import get_vk_response
 
 
 @api_view(['post'])
