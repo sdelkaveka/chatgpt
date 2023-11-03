@@ -100,6 +100,10 @@ pull:
 	@echo "Pulling changes from origin master..."
 	git pull chatgpt main
 
+freeze:
+	@echo "Coping all requirements into requirements.txt"
+	$(VENV_NAME)/bin/pip freeze > requirements.txt
+
 help:
 	@echo ""
 	@echo "Usage: $(YELLOW)make <target>$(NC)"

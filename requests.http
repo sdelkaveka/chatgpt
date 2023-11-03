@@ -11,3 +11,33 @@ Content-Type: application/json
     "dropdown3": "10",
     "dropdown4": "1000"
 }
+
+###
+POST http://127.0.0.1:8000/ok
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://resursneiroset.pythonanywhere.com/vk
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
