@@ -3,7 +3,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_vk_response(request: Request):
+def get_vk_ad_response(request: Request):
     # Название сервиса
 
     data = request.data
@@ -50,34 +50,34 @@ def get_vk_response(request: Request):
     )
 
     # Пользовательский промт
-    prompt_modification = ''
+    prompt = ''
 
-    prompt_modification += f'Из этого сделай заголовок: {input1}, {input2}'
+    prompt += f'Из этого сделай заголовок: {input1}, {input2}'
     if input3.strip():
-        prompt_modification += f', {input3}'
+        prompt += f', {input3}'
     if input4.strip():
-        prompt_modification += (
+        prompt += (
             f'. Далее телефон напиши в самом верху '
             f'объявления, второй строчкой: {input4}'
         )
     if textarea1.strip():
-        prompt_modification += f'. {textarea1}'
+        prompt += f'. {textarea1}'
     if input5.strip():
-        prompt_modification += (
+        prompt += (
             f'. Далее призови перейти на сайт, а ссылку на сайт напиши '
             f'последней строчкой в объявлении: {input5}'
         )
     if dropdown1.strip():
-        prompt_modification += f'. Пиши текст в: {dropdown1}'
+        prompt += f'. Пиши текст в: {dropdown1}'
     if dropdown2.strip():
-        prompt_modification += f'. Призови: {dropdown2}'
+        prompt += f'. Призови: {dropdown2}'
 
-    prompt_modification += f'. Напиши объявления не более: {max_len} символов.'
+    prompt += f'. Напиши объявления не более: {max_len} символов.'
 
     # Вызов обработчика GPT3 и возврат результата
     return handle_gpt3(
         chat_role=chat_role,
-        prompt_modification=prompt_modification,
+        prompt=prompt,
         timeout=timeout,
         temperature=temperature,
         max_prompt_tokens=max_prompt_tokens,

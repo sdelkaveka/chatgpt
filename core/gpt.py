@@ -10,7 +10,7 @@ from chatgpt.settings import env
 
 def handle_gpt3(
     chat_role,
-    prompt_modification,
+    promt,
     timeout=0,
     temperature=0.7,
     set_token_price=1,
@@ -25,11 +25,11 @@ def handle_gpt3(
     # Определяем сообщения для GPT-3
     messages = [
         {"role": "system", "content": chat_role},
-        {"role": "user", "content": prompt_modification}
+        {"role": "user", "content": promt}
     ]
 
     # Валидируем промпт
-    validate_prompt(prompt_modification, timeout)
+    validate_prompt(promt, timeout)
 
     # Считаем стоимость запроса
     server_tokens_and_price = count_tokens_and_price(
@@ -61,7 +61,7 @@ def handle_gpt3(
     return get_response(
         openai_response,
         chat_role,
-        prompt_modification,
+        promt,
         server_tokens_and_price,
         chat_tokens_and_price
     )
@@ -70,14 +70,14 @@ def handle_gpt3(
 def get_response(
         openai_response,
         chat_role,
-        prompt_modification,
+        promt,
         server_tokens_and_price,
         chat_tokens_and_price
 ):
     return Response({
         "answer": openai_response['choices'][0]['message']['content'],
         "adminFieldContent": chat_role,
-        "use_prompt_modification": prompt_modification,
+        "use_promt": promt,
         "server_system_info": server_tokens_and_price,
         "chat_system_info": chat_tokens_and_price,
     })
