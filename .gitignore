@@ -163,3 +163,4 @@ cython_debug/
 #.idea/
 
 ad-generator
+form.html
