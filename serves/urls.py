@@ -1,5 +1,6 @@
 from django.urls import path  # include
-from .views import vk_ad, ok_ad
+
+from .views import ok_ad, vk_ad
 
 urlpatterns = [
     path('vk', vk_ad,),
