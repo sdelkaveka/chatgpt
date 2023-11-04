@@ -1,8 +1,13 @@
 ###
-GET http://127.0.0.1:8000/
+POST http://127.0.0.1:8000/api/hello
+Content-Type: application/json
+
+{
+    "value": "hello"
+}
 
 ###
-POST http://127.0.0.1:8000/fairy_tales
+POST http://127.0.0.1:8000/api/fairy_tales
 Content-Type: application/json
 
 {
@@ -17,7 +22,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/fix
+POST http://127.0.0.1:8000/api/fix
 Content-Type: application/json
 
 {
@@ -32,7 +37,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/improve
+POST http://127.0.0.1:8000/api/improve
 Content-Type: application/json
 
 {
@@ -47,7 +52,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/inst
+POST http://127.0.0.1:8000/api/inst
 Content-Type: application/json
 
 {
@@ -62,7 +67,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/inst_post
+POST http://127.0.0.1:8000/api/inst_post
 Content-Type: application/json
 
 {
@@ -77,7 +82,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/ok_ad
+POST http://127.0.0.1:8000/api/ok_ad
 Content-Type: application/json
 
 {
@@ -92,7 +97,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/ok_post
+POST http://127.0.0.1:8000/api/ok_post
 Content-Type: application/json
 
 {
@@ -107,7 +112,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/rewrite
+POST http://127.0.0.1:8000/api/rewrite
 Content-Type: application/json
 
 {
@@ -122,7 +127,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/short
+POST http://127.0.0.1:8000/api/short
 Content-Type: application/json
 
 {
@@ -137,7 +142,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/site_ceo
+POST http://127.0.0.1:8000/api/site_ceo
 Content-Type: application/json
 
 {
@@ -152,7 +157,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/site_keywords
+POST http://127.0.0.1:8000/api/site_keywords
 Content-Type: application/json
 
 {
@@ -167,7 +172,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/site_struct
+POST http://127.0.0.1:8000/api/site_struct
 Content-Type: application/json
 
 {
@@ -182,7 +187,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/site_struct_page
+POST http://127.0.0.1:8000/api/site_struct_page
 Content-Type: application/json
 
 {
@@ -197,7 +202,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/site_url
+POST http://127.0.0.1:8000/api/site_url
 Content-Type: application/json
 
 {
@@ -212,7 +217,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/text_struct
+POST http://127.0.0.1:8000/api/text_struct
 Content-Type: application/json
 
 {
@@ -227,7 +232,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/tg
+POST http://127.0.0.1:8000/api/tg
 Content-Type: application/json
 
 {
@@ -242,7 +247,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/tg_post
+POST http://127.0.0.1:8000/api/tg_post
 Content-Type: application/json
 
 {
@@ -257,7 +262,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/translate
+POST http://127.0.0.1:8000/api/translate
 Content-Type: application/json
 
 {
@@ -272,7 +277,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/vk_ad
+POST http://127.0.0.1:8000/api/vk_ad
 Content-Type: application/json
 
 {
@@ -287,7 +292,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/vk_post
+POST http://127.0.0.1:8000/api/vk_post
 Content-Type: application/json
 
 {

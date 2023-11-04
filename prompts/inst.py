@@ -1,6 +1,7 @@
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
+import json
 
 
 async def get_inst_response(request: Request):

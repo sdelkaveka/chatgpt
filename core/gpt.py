@@ -9,7 +9,7 @@ from chatgpt.settings import env
 
 async def handle_gpt3(
     chat_role,
-    promt,
+    prompt,
     timeout=0,
     temperature=0.7,
     set_token_price=1,
@@ -24,11 +24,11 @@ async def handle_gpt3(
     # Определяем сообщения для GPT-3
     messages = [
         {"role": "system", "content": chat_role},
-        {"role": "user", "content": promt}
+        {"role": "user", "content": prompt}
     ]
 
     # Валидируем промпт
-    validate_prompt(promt, timeout)
+    validate_prompt(prompt, timeout)
 
     # Считаем стоимость запроса
     server_tokens_and_price = count_tokens_and_price(
@@ -41,7 +41,7 @@ async def handle_gpt3(
 
     try:
         # Создаем запрос к GPT-3 и получаем ответ
-        openai_response = await openai.ChatCompletion.create(
+        openai_response = await openai.ChatCompletion.acreate(
             model=model_chat_gpt,
             messages=messages,
             temperature=temperature,
@@ -60,7 +60,7 @@ async def handle_gpt3(
     return get_response(
         openai_response,
         chat_role,
-        promt,
+        prompt,
         server_tokens_and_price,
         chat_tokens_and_price
     )
@@ -69,14 +69,15 @@ async def handle_gpt3(
 def get_response(
         openai_response,
         chat_role,
-        promt,
+        prompt,
         server_tokens_and_price,
         chat_tokens_and_price
 ):
     return {
+        'isSuccess': True,
         "answer": openai_response['choices'][0]['message']['content'],
         "adminFieldContent": chat_role,
-        "use_promt": promt,
+        "use_promt": prompt,
         "server_system_info": server_tokens_and_price,
         "chat_system_info": chat_tokens_and_price,
     }

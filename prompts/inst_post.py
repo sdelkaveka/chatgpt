@@ -1,6 +1,7 @@
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
+import json
 
 
 async def get_inst_post_response(request: Request):
@@ -15,7 +16,7 @@ async def get_inst_post_response(request: Request):
     timeout = 5                   # Таймаут при нецензурном слове
 
     # Получаем JSON-данные из запроса от frontend
-    data = request.json
+    data = request.data
 
     # Извлекаем 'Переменные' из запроса от frontend
     textarea1 = data.get('textarea1', '')         # Тема поста
