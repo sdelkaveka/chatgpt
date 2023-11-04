@@ -1,14 +1,13 @@
 
 import openai
 from rest_framework.exceptions import ValidationError
-from rest_framework.response import Response
 
 from .token_price import count_tokens_and_price, price_from_tokens
 from .validators import validate_prompt
 from chatgpt.settings import env
 
 
-def handle_gpt3(
+async def handle_gpt3(
     chat_role,
     promt,
     timeout=0,
@@ -42,7 +41,7 @@ def handle_gpt3(
 
     try:
         # Создаем запрос к GPT-3 и получаем ответ
-        openai_response = openai.ChatCompletion.create(
+        openai_response = await openai.ChatCompletion.create(
             model=model_chat_gpt,
             messages=messages,
             temperature=temperature,
@@ -74,10 +73,10 @@ def get_response(
         server_tokens_and_price,
         chat_tokens_and_price
 ):
-    return Response({
+    return {
         "answer": openai_response['choices'][0]['message']['content'],
         "adminFieldContent": chat_role,
         "use_promt": promt,
         "server_system_info": server_tokens_and_price,
         "chat_system_info": chat_tokens_and_price,
-    })
+    }

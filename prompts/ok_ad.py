@@ -3,7 +3,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_ok_ad_response(request: Request):
+async def get_ok_ad_response(request: Request):
     # Название сервиса
     data = request.data
 
@@ -76,7 +76,7 @@ def get_ok_ad_response(request: Request):
     )
 
     # Вызов обработчика GPT3 и возврат результата
-    return handle_gpt3(
+    return await handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

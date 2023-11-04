@@ -3,7 +3,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_fairy_tales_response(request: Request):
+async def get_fairy_tales_response(request: Request):
 
     max_role_tokens = 100       	# Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
@@ -66,7 +66,7 @@ def get_fairy_tales_response(request: Request):
         'используй стандатрные шаблоны про дружбу и приключения.'
     )
     # Вызов обработчика GPT3 и возврат результата
-    return handle_gpt3(
+    return await handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

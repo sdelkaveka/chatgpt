@@ -1,9 +1,35 @@
 from django.urls import path  # , include
 
-from .views import ok_ad, tg_ad, vk_ad
+from .views import (get_fairy_tales_response, get_fix_response,
+                    get_improve_response, get_inst_post_response,
+                    get_inst_response, get_ok_ad_response,
+                    get_ok_post_response, get_rewrite_response,
+                    get_short_response, get_site_ceo_response,
+                    get_site_keywords_response, get_site_struct_page_response,
+                    get_site_struct_response, get_site_url_response,
+                    get_text_struct_response, get_tg_post_response,
+                    get_tg_response, get_translate_response,
+                    get_vk_ad_response, get_vk_post_response)
 
 urlpatterns = [
-    path('vk', vk_ad,),
-    path('ok', ok_ad,),
-    path('tg', tg_ad,),
+    path('fairy_tales', get_fairy_tales_response),
+    path('fix', get_fix_response),
+    path('improve', get_improve_response),
+    path('inst', get_inst_response),
+    path('inst_post', get_inst_post_response),
+    path('ok_ad', get_ok_ad_response),
+    path('ok_post', get_ok_post_response),
+    path('rewrite', get_rewrite_response),
+    path('short', get_short_response),
+    path('site_ceo', get_site_ceo_response),
+    path('site_keywords', get_site_keywords_response),
+    path('site_struct', get_site_struct_response),
+    path('site_struct_page', get_site_struct_page_response),
+    path('site_url', get_site_url_response),
+    path('text_struct', get_text_struct_response),
+    path('tg', get_tg_response),
+    path('tg_post', get_tg_post_response),
+    path('translate', get_translate_response),
+    path('vk_ad', get_vk_ad_response),
+    path('vk_post', get_vk_post_response),
 ]

@@ -3,7 +3,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def obyavleniya_instagram_response(request: Request):
+async def get_inst_response(request: Request):
     # Название сервиса
 
     max_role_tokens = 70          # Kоличество токенов роль чата по умолчанию
@@ -77,7 +77,7 @@ def obyavleniya_instagram_response(request: Request):
     )
 
     # Вызов обработчика GPT3 и возврат результата
-    return handle_gpt3(
+    return await handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

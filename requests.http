@@ -1,4 +1,8 @@
-POST http://127.0.0.1:8000/vk
+###
+GET http://127.0.0.1:8000/
+
+###
+POST http://127.0.0.1:8000/fairy_tales
 Content-Type: application/json
 
 {
@@ -13,7 +17,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8000/ok
+POST http://127.0.0.1:8000/fix
 Content-Type: application/json
 
 {
@@ -26,10 +30,282 @@ Content-Type: application/json
     "dropdown3": "10",
     "dropdown4": "1000"
 }
+
+###
+POST http://127.0.0.1:8000/improve
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/inst
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/inst_post
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/ok_ad
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/ok_post
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/rewrite
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/short
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/site_ceo
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/site_keywords
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/site_struct
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/site_struct_page
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/site_url
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/text_struct
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/tg
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/tg_post
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/translate
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/vk_ad
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
+###
+POST http://127.0.0.1:8000/vk_post
+Content-Type: application/json
+
+{
+    "input1": "Маркетолог",
+    "input2": "Ищу программистов",
+    "input3": "Москва",
+    "textarea1": "На ставку от 150000 рублей в месяц",
+    "dropdown1": "Панк",
+    "dropdown2": "Придти на прыжок с парашютом",
+    "dropdown3": "10",
+    "dropdown4": "1000"
+}
+
 
 ###
 POST http://resursneiroset.pythonanywhere.com/vk
 Content-Type: application/json
+
 
 {
     "input1": "Маркетолог",

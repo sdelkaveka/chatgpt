@@ -3,10 +3,9 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def obyavleniya_instagram_response(request: Request):
-    # Название сервиса
+async def get_vk_post_response(request: Request):
 
-    max_role_tokens = 100     # Kоличество токенов роль чата по умолчанию
+    max_role_tokens = 150         # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
     max_prompt_tokens = 500
     max_response_tokens = 500     # Kоличество токенов ответа чата по умолчанию
@@ -24,7 +23,7 @@ def obyavleniya_instagram_response(request: Request):
     dropdown2 = data.get('dropdown2', '')         # Призывы к действию
     input1 = data.get('input1', '')               # Регион
     input2 = data.get('input2', '')               # Телефон
-    input3 = data.get('input3', '')               # Ссылка
+    input3 = data.get('input3', '')               # Сайт
     dropdown3 = data.get('dropdown3', '')         # Смайлики
     dropdown4 = data.get('dropdown4', '')  # Уровень творчества/температура
     # Кол-во Символов на Отчет чата.
@@ -41,12 +40,16 @@ def obyavleniya_instagram_response(request: Request):
     # Роль чата GPT
     chat_role = (
         'Представь ты лучший копирайтер в мире и лучший SMM-менеджер в '
-        'социальной сети Instagram. Напиши пожалуйста качественный '
-        'привлекательные тексты для поста. Пиши с абзацами.'
+        'социальной сети Вконтакте. Напиши пожалуйста качественный '
+        'привлекательные тексты для поста. Пиши с абзацами, применяй '
+        'релевантные хэштеги до 5 шт.'
     )
 
+    # Пользовательский промт
     prompt = ''
-    prompt += f'Тема поста: [{textarea1}.] Сделай из этого мощьный заголовок '
+
+    # Тема поста
+    prompt += f'Тема поста: "{textarea1}"'
     if textarea2.strip():
         # Краткое описание
         prompt += f'. Краткое описание поста: {textarea2}'
@@ -58,24 +61,27 @@ def obyavleniya_instagram_response(request: Request):
         prompt += f'. В тексте должен быть призыв к действию: {dropdown2}'
     if input1.strip():
         # Регион
-        prompt += f'. {input1}'
+        prompt += f'. Учти регион: {input1}'
     if input2.strip():
         # Телефон
-        prompt += f'. Телефон напиши в самом верху, второй строчкой: {input2}'
+        prompt += (
+            f'. Телефон напиши в самом верху объявления, второй строчкой: '
+            f'{input2}'
+        )
     if input3.strip():
-        # Хэштег
-        prompt += f'. Используй хэштеги: {input3}'
+        # Сайт
+        prompt += (
+            f'. Далее призови перейти на сайт, а ссылку на сайт напиши '
+            f'последней строчкой: {input3}'
+        )
     if dropdown3.strip():
         # Смайлики
         prompt += f'. Смайлики и эмодзи {dropdown3}'
 
-    prompt += (
-        f'. Напиши текст не более: {max_length} символов. Пиши пост креативно '
-        f'и разнообразно. Применяй хэштеги релевантные содержимому поста, до '
-        f'5 шт.'
-    )
-    # Вызов обработчика GPT3 и возврат результата
-    return handle_gpt3(
+    # Кол-во символов
+    prompt += f'. Напиши текст не более: {max_length} символов.'
+
+    return await handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

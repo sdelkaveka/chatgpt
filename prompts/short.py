@@ -3,7 +3,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_short_response(request: Request):
+async def get_short_response(request: Request):
 
     max_role_tokens = 50          # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
@@ -58,7 +58,7 @@ def get_short_response(request: Request):
     )
 
     # Вызов обработчика GPT3 и возврат результата
-    return handle_gpt3(
+    return await handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

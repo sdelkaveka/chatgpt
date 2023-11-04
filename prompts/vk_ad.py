@@ -3,7 +3,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_vk_ad_response(request: Request):
+async def get_vk_ad_response(request: Request):
     # Название сервиса
 
     data = request.data
@@ -75,7 +75,7 @@ def get_vk_ad_response(request: Request):
     prompt += f'. Напиши объявления не более: {max_len} символов.'
 
     # Вызов обработчика GPT3 и возврат результата
-    return handle_gpt3(
+    return await handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

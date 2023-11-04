@@ -35,7 +35,7 @@ migrate:
 # Start the development server
 run:
 	@echo "Starting development server..."
-	$(MANAGE_PY) runserver
+	uvicorn chatgpt.asgi:application --reload
 
 # Run tests
 test:
