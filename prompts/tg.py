@@ -1,6 +1,7 @@
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
+import json
 
 
 async def get_tg_response(request: Request):
@@ -14,6 +15,7 @@ async def get_tg_response(request: Request):
     timeout = 5                   # Таймаут при нецензурном слове
 
     data = request.data
+
     # Извлекаем 'Переменные' из запроса от frontend
     input1 = data.get('input1', '')                # Кто я
     input2 = data.get('input2', '')                # Что делаю

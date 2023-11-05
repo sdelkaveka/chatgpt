@@ -2,6 +2,8 @@ from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
+import json
+
 
 async def get_site_struct_page_response(request: Request):
 
@@ -18,7 +20,7 @@ async def get_site_struct_page_response(request: Request):
     model_chat_gpt = 'gpt-3.5-turbo'  # Версия модели чата GPT
 
     # Получаем JSON-данные из запроса от frontend
-    data = request.json
+    data = request.data
 
     # Извлекаем 'Переменные' из запроса от frontend
     input1 = data.get('input1', '')            # Название страницы
