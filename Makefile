@@ -16,7 +16,7 @@ GREEN := \033[0;32m
 # If the first argument is "push"...
 ifeq (push,$(firstword $(MAKECMDGOALS)))
   # use the rest as arguments for "push"
-  MESSAGE := $(wordlist 1,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  MESSAGE := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   # ...and turn them into do-nothing targets
   $(eval $(MESSAGE):;@:)
 endif
