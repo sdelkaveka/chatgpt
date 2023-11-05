@@ -13,6 +13,15 @@ RED := \033[0;31m
 NC := \033[0m
 GREEN := \033[0;32m
 
+# If the first argument is "push"...
+ifeq (push,$(firstword $(MAKECMDGOALS)))
+  # use the rest as arguments for "push"
+  MESSAGE := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  # ...and turn them into do-nothing targets
+  $(eval $(MESSAGE):;@:)
+endif
+
+
 
 # Create a virtual environment
 venv:
@@ -107,7 +116,7 @@ freeze:
 push:
 	@echo "Coping all requirements into requirements.txt"
 	git add --all
-	git commit -m '$(message)'
+	git commit -m '$(MESSAGE)'
 	git push
 
 
