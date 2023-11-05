@@ -104,6 +104,13 @@ freeze:
 	@echo "Coping all requirements into requirements.txt"
 	$(VENV_NAME)/bin/pip freeze > requirements.txt
 
+push:
+	@echo "Coping all requirements into requirements.txt"
+	git add --all
+	git commit -m '$(message)'
+	git push
+
+
 help:
 	@echo ""
 	@echo "Usage: $(YELLOW)make <target>$(NC)"

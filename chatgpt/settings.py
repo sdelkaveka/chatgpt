@@ -13,7 +13,10 @@ SECRET_KEY = env.str('SECRET_KEY')
 DEBUG = env.bool('DEBUG')
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'resursneiroset.pythonanywhere.com',
+    '127.0.0.1',
+]
 
 # CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ALLOW_CREDENTIALS = True
