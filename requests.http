@@ -1,24 +1,15 @@
 ###
-POST http://127.0.0.1:8000/api/hello
-Content-Type: application/json
-
-{
-    "value": "hello"
-}
-
-###
 POST http://127.0.0.1:8000/api/fairy_tales
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Название",
+    "textarea2": "Главные(й) герои(й)",
+    "textarea3": "Остальные персонажи",
+    "textarea4": "Любые слова, они будут в сказке",
+    "textarea5": "Сюжет",
+    "dropdown1": "Стиль",
+    "textarea6": "Концовка"
 }
 
 ###
@@ -26,14 +17,11 @@ POST http://127.0.0.1:8000/api/fix
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Текст для рерайта",
+    "textarea2": "Дополнительные данные",
+    "dropdown1": "Стиль",
+    "dropdown2": 10
+
 }
 
 ###
@@ -41,14 +29,10 @@ POST http://127.0.0.1:8000/api/improve
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Статья, абзац",
+    "textarea2": "Дополнительные данные",
+    "dropdown1": "10",
+    "dropdown2": "1000"
 }
 
 ###
@@ -56,13 +40,15 @@ POST http://127.0.0.1:8000/api/inst
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
+    "input1": "Кто я",
+    "input2": "Что делаю",
+    "input3": "Регион",
+    "input4": "Телефон",
+    "input5": "Ссылка",
+    "textarea1": "Дополнительные данные",
+    "dropdown1": "Стиль",
+    "dropdown2": "Призывы к действию",
+    "dropdown3": "1",
     "dropdown4": "1000"
 }
 
@@ -71,14 +57,17 @@ POST http://127.0.0.1:8000/api/inst_post
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1":"Тема поста",
+    "textarea2":"Краткое описание",
+    "dropdown1":"Стиль",
+    "dropdown2":"Призывы к действию",
+    "input1":"Регион",
+    "input2":"Телефон",
+    "input3":"Ссылка",
+    "dropdown3":"Смайлики",
+    "dropdown4":"1",
+    "dropdown5":"1000"
+
 }
 
 ###
@@ -86,14 +75,17 @@ POST http://127.0.0.1:8000/api/ok_ad
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "input1":"Кто я",
+    "input2":"Что делаю",
+    "input3":"Регион",
+    "input4":"Телефон",
+    "input5":"Ссылка",
+    "textarea1":"Дополнительные данные",
+    "dropdown1":"Стиль",
+    "dropdown2":"Призывы к действию",
+    "dropdown3":"1",
+    "dropdown4":"1000"
+
 }
 
 ###
@@ -101,14 +93,16 @@ POST http://127.0.0.1:8000/api/ok_post
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Тема поста",
+    "textarea2": "Краткое описание",
+    "dropdown1": "Стиль",
+    "dropdown2": "Призывы к действию",
+    "input1": "Регион",
+    "input2": "Телефон",
+    "input3": "Сайт",
+    "dropdown3": "Смайлики",
+    "dropdown4": "1",
+    "dropdown5": "1000"
 }
 
 ###
@@ -116,14 +110,11 @@ POST http://127.0.0.1:8000/api/rewrite
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Текст для рерайта",
+    "textarea2": "Дополнительные данные",
+    "dropdown1": "Стиль",
+    "dropdown2": "1",
+    "dropdown3": "1000"
 }
 
 ###
@@ -131,14 +122,10 @@ POST http://127.0.0.1:8000/api/short
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Статья, абзац",
+    "textarea2": "Дополнительные данные",
+    "dropdown1": "1",
+    "dropdown2": "1000"
 }
 
 ###
@@ -146,14 +133,12 @@ POST http://127.0.0.1:8000/api/site_ceo
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Текст для оптимизации",
+    "textarea2": "Ключевые слова",
+    "textarea3": "Минус слова",
+    "textarea4": "Дополнительные данные",
+    "dropdown1": "1",
+    "dropdown2": "1000"
 }
 
 ###
@@ -161,14 +146,10 @@ POST http://127.0.0.1:8000/api/site_keywords
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "input1": "Название страницы сайта",
+    "input2": "Регион",
+    "textarea1": "Ключевые слова",
+    "textarea2": "Минус слова"
 }
 
 ###
@@ -176,14 +157,10 @@ POST http://127.0.0.1:8000/api/site_struct
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1":" Все направления вашей деятельности",
+    "input1":" Регион",
+    "textarea2":" Какие направления исключить",
+    "textarea3":" Дополнительные данные"
 }
 
 ###
@@ -191,14 +168,14 @@ POST http://127.0.0.1:8000/api/site_struct_page
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "dropdown1": "Цель страницы",
+    "dropdown2": "Целевая аудитория",
+    "dropdown3": "Основные действия",
+    "dropdown4": "Призыв к действию",
+    "input2": "Регион",
+    "textarea1": "Ключевые слова",
+    "textarea2": "Дополнительные данные"
+
 }
 
 ###
@@ -206,14 +183,12 @@ POST http://127.0.0.1:8000/api/site_url
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Основной текст",
+    "input1": "Домен или раздел",
+    "input2": "Регион",
+    "dropdown1": "Слова: Латиницей, Английские",
+    "textarea2": "Дополнительные данные",
+    "dropdown2": "1"
 }
 
 ###
@@ -221,14 +196,18 @@ POST http://127.0.0.1:8000/api/text_struct
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Структура страницы",
+    "textarea2": "Ключевые слова",
+    "dropdown1": "Тип страницы",
+    "dropdown2": "Целевая аудитория",
+    "dropdown3": "Призвы к действию",
+    "dropdown4": "Стиль",
+    "input1": "Регион",
+    "input2": "Телефон",
+    "textarea3": "Дополнительные данные",
+    "dropdown5": "1",
+    "dropdown6": "1000"
+
 }
 
 ###
@@ -236,14 +215,17 @@ POST http://127.0.0.1:8000/api/tg
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
+    "input1": "Кто я",
+    "input2": "Что делаю",
+    "input3": "Регион",
+    "input4": "Телефон",
+    "input5": "Ссылка",
+    "textarea1": "Дополнительные данные",
+    "dropdown1": "Стиль",
+    "dropdown2": "Призывы к действию",
+    "dropdown3": "1",
     "dropdown4": "1000"
+
 }
 
 ###
@@ -251,14 +233,17 @@ POST http://127.0.0.1:8000/api/tg_post
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Тема поста",
+    "textarea2": "Краткое описание",
+    "dropdown1": "Стиль",
+    "dropdown2": "Призывы к действию",
+    "input1": "Регион",
+    "input2": "Телефон",
+    "input3": "Ссылка",
+    "dropdown3": "Смайлики",
+    "dropdown4": "1",
+    "dropdown5": "1000"
+
 }
 
 ###
@@ -266,14 +251,11 @@ POST http://127.0.0.1:8000/api/translate
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Текст для рерайта",
+    "textarea2": "Дополнительные данные",
+    "dropdown1": "Стиль",
+    "dropdown2": "1",
+    "dropdown3": "1000"
 }
 
 ###
@@ -281,13 +263,15 @@ POST http://127.0.0.1:8000/api/vk_ad
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
+    "input1": "Кто я",
+    "input2": "Что делаю",
+    "input3": "Регион",
+    "input4": "Телефон",
+    "textarea1": "Дополнительные данные",
+    "input5": "Ссылка",
+    "dropdown1": "Стиль",
+    "dropdown2": "Призыв к действию",
+    "dropdown3": "1",
     "dropdown4": "1000"
 }
 
@@ -296,14 +280,16 @@ POST http://127.0.0.1:8000/api/vk_post
 Content-Type: application/json
 
 {
-    "input1": "Маркетолог",
-    "input2": "Ищу программистов",
-    "input3": "Москва",
-    "textarea1": "На ставку от 150000 рублей в месяц",
-    "dropdown1": "Панк",
-    "dropdown2": "Придти на прыжок с парашютом",
-    "dropdown3": "10",
-    "dropdown4": "1000"
+    "textarea1": "Тема поста",
+    "textarea2": "Краткое описание",
+    "dropdown1": "Стиль",
+    "dropdown2": "Призывы к действию",
+    "input1": "Регион",
+    "input2": "Телефон",
+    "input3": "Сайт",
+    "dropdown3": "Смайлики",
+    "dropdown4": "1",
+    "dropdown5": "1000"
 }
 
 

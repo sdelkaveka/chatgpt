@@ -1,11 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
-import json
 
-
-async def get_site_struct_page_response(request: Request):
+def get_site_struct_page_response(request: Request):
 
     # Токены
     max_role_tokens = 100  # количество токенов роль чата по умолчанию
@@ -78,7 +78,7 @@ async def get_site_struct_page_response(request: Request):
         'информации. Разбей страницу на смысловые блоки и укажи заголовки '
         'H1 H2 H3.'
     )
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

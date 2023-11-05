@@ -1,10 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
-import json
 
 
-async def get_site_keywords_response(request: Request):
+def get_site_keywords_response(request: Request):
     # Название сервиса
 
     max_role_tokens = 100          # Kоличество токенов роль чата по умолчанию
@@ -59,7 +60,7 @@ async def get_site_keywords_response(request: Request):
         '. Напиши максимально расширенный список, без пояснений. Каждое '
         'ключевое слово должно быть разделено символом переноса строки.'
     )
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

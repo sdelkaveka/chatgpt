@@ -1,11 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
-import json
 
-
-async def get_site_ceo_response(request: Request):
+def get_site_ceo_response(request: Request):
 
     max_role_tokens = 50         # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
@@ -68,7 +68,7 @@ async def get_site_ceo_response(request: Request):
 
     prompt += f'. Напиши статью до {max_response_simvolov_promt} символов.'
 
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

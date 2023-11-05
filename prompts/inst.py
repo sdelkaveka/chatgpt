@@ -1,10 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
-import json
 
 
-async def get_inst_response(request: Request):
+def get_inst_response(request: Request):
     # Название сервиса
 
     max_role_tokens = 70          # Kоличество токенов роль чата по умолчанию
@@ -78,7 +79,7 @@ async def get_inst_response(request: Request):
     )
 
     # Вызов обработчика GPT3 и возврат результата
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

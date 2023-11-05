@@ -7,7 +7,7 @@ from .validators import validate_prompt
 from chatgpt.settings import env
 
 
-async def handle_gpt3(
+def handle_gpt3(
     chat_role,
     prompt,
     timeout=0,
@@ -41,7 +41,7 @@ async def handle_gpt3(
 
     try:
         # Создаем запрос к GPT-3 и получаем ответ
-        openai_response = await openai.ChatCompletion.acreate(
+        openai_response = openai.ChatCompletion.create(
             model=model_chat_gpt,
             messages=messages,
             temperature=temperature,

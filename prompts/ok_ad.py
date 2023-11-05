@@ -1,11 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
-import json
 
-
-async def get_ok_ad_response(request: Request):
+def get_ok_ad_response(request: Request):
     # Название сервиса
     data = request.data
 
@@ -78,7 +78,7 @@ async def get_ok_ad_response(request: Request):
     )
 
     # Вызов обработчика GPT3 и возврат результата
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

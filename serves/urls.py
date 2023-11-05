@@ -1,15 +1,9 @@
 from django.urls import path  # , include
 
-from .views import (fairy_tales, fix,
-                    improve, inst_post,
-                    inst, ok_ad,
-                    ok_post, rewrite,
-                    short, site_ceo,
-                    site_keywords, site_struct_page,
-                    site_struct, site_url,
-                    text_struct, tg_post,
-                    tg, translate,
-                    vk_ad, vk_post)
+from .views import (fairy_tales, fix, improve, inst, inst_post, ok_ad, ok_post,
+                    rewrite, short, site_ceo, site_keywords, site_struct,
+                    site_struct_page, site_url, text_struct, tg, tg_post,
+                    translate, vk_ad, vk_post)
 
 urlpatterns = [
     path('fairy_tales', fairy_tales),

@@ -1,10 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
-import json
 
 
-async def get_inst_post_response(request: Request):
+def get_inst_post_response(request: Request):
     # Название сервиса
 
     max_role_tokens = 100     # Kоличество токенов роль чата по умолчанию
@@ -75,7 +76,7 @@ async def get_inst_post_response(request: Request):
         f'и разнообразно. Применяй хэштеги релевантные содержимому поста, до '
         f'5 шт.'
     )
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,

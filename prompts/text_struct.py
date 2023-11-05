@@ -1,11 +1,11 @@
+import json
+
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
-import json
 
-
-async def get_text_struct_response(request: Request):
+def get_text_struct_response(request: Request):
 
     max_role_tokens = 50         # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
@@ -90,7 +90,7 @@ async def get_text_struct_response(request: Request):
         f'и Как можно дольше там удерживалась. Напиши текст до {max_length} '
         f'символов. Пиши чистый текст, не делай разметку тегами.'
     )
-    return await handle_gpt3(
+    return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,
         timeout=timeout,
