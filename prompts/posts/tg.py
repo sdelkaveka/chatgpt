@@ -1,14 +1,12 @@
-import json
 
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
 
-def get_inst_post_response(request: Request):
-    # Название сервиса
+def get_tg_post_response(request: Request):
 
-    max_role_tokens = 100     # Kоличество токенов роль чата по умолчанию
+    max_role_tokens = 100         # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
     max_prompt_tokens = 500
     max_response_tokens = 500     # Kоличество токенов ответа чата по умолчанию
@@ -38,16 +36,19 @@ def get_inst_post_response(request: Request):
     # Переводим Символы в Токены Ограничения ответ чата
     max_response_tokens = round(dropdown5 / 1.1)
     # Кол-во. Символов для Промта в чат
-    max_length = round(dropdown5 / 2.75)
+    max_response_simvolov_promt = round(dropdown5 / 2.75)
 
     # Роль чата GPT
     chat_role = (
         'Представь ты лучший копирайтер в мире и лучший SMM-менеджер в '
-        'социальной сети Instagram. Напиши пожалуйста качественный '
+        'социальной сети Telegram. Напиши пожалуйста качественный '
         'привлекательные тексты для поста. Пиши с абзацами.'
     )
 
+    # Пользовательский промт
     prompt = ''
+
+    # Тема поста
     prompt += f'Тема поста: [{textarea1}.] Сделай из этого мощьный заголовок '
     if textarea2.strip():
         # Краткое описание
@@ -65,17 +66,21 @@ def get_inst_post_response(request: Request):
         # Телефон
         prompt += f'. Телефон напиши в самом верху, второй строчкой: {input2}'
     if input3.strip():
-        # Хэштег
-        prompt += f'. Используй хэштеги: {input3}'
+        # Ссылка
+        prompt += (
+            f'. Далее призови перейти по ссылке, а ссылку на сайт напиши '
+            f'последней строчкой: {input3}'
+        )
     if dropdown3.strip():
         # Смайлики
         prompt += f'. Смайлики и эмодзи {dropdown3}'
 
+    # Кол-во символов
     prompt += (
-        f'. Напиши текст не более: {max_length} символов. Пиши пост креативно '
-        f'и разнообразно. Применяй хэштеги релевантные содержимому поста, до '
-        f'5 шт.'
+        f'. Напиши текст не более: {max_response_simvolov_promt} символов. '
+        f'Пиши пост креативно и разнообразно. Хешьтеги НЕ применяй.'
     )
+
     return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,

@@ -1,11 +1,10 @@
-import json
 
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
 
-def get_site_ceo_response(request: Request):
+def get_site_seo_response(request: Request):
 
     max_role_tokens = 50         # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию

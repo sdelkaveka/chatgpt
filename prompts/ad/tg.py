@@ -1,13 +1,10 @@
-import json
 
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
 
-def get_ok_ad_response(request: Request):
-    # Название сервиса
-    data = request.data
+def get_tg_response(request: Request):
 
     max_role_tokens = 70          # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
@@ -17,7 +14,7 @@ def get_ok_ad_response(request: Request):
     temperature = 0.7             # Температура
     timeout = 5                   # Таймаут при нецензурном слове
 
-    # Получаем JSON-данные из запроса от frontend
+    data = request.data
 
     # Извлекаем 'Переменные' из запроса от frontend
     input1 = data.get('input1', '')                # Кто я
@@ -28,7 +25,7 @@ def get_ok_ad_response(request: Request):
     textarea1 = data.get('textarea1', '')          # Дополнительные данные
     dropdown1 = str(data.get('dropdown1', ''))     # Стиль
     dropdown2 = str(data.get('dropdown2', ''))     # Призывы к действию
-    dropdown3 = data.get('dropdown3', '')     # Уровень творчества
+    dropdown3 = data.get('dropdown3', '')          # Уровень творчества
     # Кол-во Символов на Отчет чата.
     dropdown4 = int(data.get('dropdown4', ''))
 
@@ -42,14 +39,15 @@ def get_ok_ad_response(request: Request):
 
     # Роль чата GPT
     chat_role = (
-        'Представь что ты лучший копирайтер в мире и пишешь лучшие '
-        'объявления для социальной сети "Одноклассники".'
+        'Представь что ты лучший копирайтер в мире и пишешь лучшие объявления '
+        'для социальной сети Telegram.'
     )
+
     # Пользовательский промт
     prompt = (
-        ' Напиши объявление для "Одноклассников" максимально отвечающее '
-        'требованиям в запросе. Текст пиши со смайликами и разбивай на '
-        'смысловые абзацы. Пиши креативно и разнообразно'
+        ' Напиши объявление для Telegram максимально отвечающее требованиям в '
+        'запросе. Текст пиши со смайликами и разбивай на смысловые абзацы. '
+        'Пиши креативно и разнообразно'
     )
 
     prompt += (
@@ -73,11 +71,10 @@ def get_ok_ad_response(request: Request):
         prompt += f'. Призови: {dropdown2}'
 
     prompt += (
-        f'. Напиши объявления не более: {max_length} символов. '
-        f'Пиши максимально разнообразно. Пиши БЕЗ хештегов!.'
+        f'. Напиши объявления не более: {max_length} символов. Пиши '
+        f'максимально разнообразно. Не применяй хештеги.'
     )
 
-    # Вызов обработчика GPT3 и возврат результата
     return handle_gpt3(
         chat_role=chat_role,
         prompt=prompt,

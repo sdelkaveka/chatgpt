@@ -1,12 +1,12 @@
-import json
 
 from rest_framework.request import Request
 
 from core.gpt import handle_gpt3
 
 
-def get_inst_response(request: Request):
+def get_ok_ad_response(request: Request):
     # Название сервиса
+    data = request.data
 
     max_role_tokens = 70          # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию
@@ -17,7 +17,6 @@ def get_inst_response(request: Request):
     timeout = 5                   # Таймаут при нецензурном слове
 
     # Получаем JSON-данные из запроса от frontend
-    data = request.data
 
     # Извлекаем 'Переменные' из запроса от frontend
     input1 = data.get('input1', '')                # Кто я
@@ -28,11 +27,12 @@ def get_inst_response(request: Request):
     textarea1 = data.get('textarea1', '')          # Дополнительные данные
     dropdown1 = str(data.get('dropdown1', ''))     # Стиль
     dropdown2 = str(data.get('dropdown2', ''))     # Призывы к действию
-    dropdown3 = data.get('dropdown3', '')          # Уровень творчества
+    dropdown3 = data.get('dropdown3', '')     # Уровень творчества
     # Кол-во Символов на Отчет чата.
     dropdown4 = int(data.get('dropdown4', ''))
 
     if dropdown3.strip():  # Hе пустое ли значение Уровень творчества
+        # Преобразуем в число и делим на 10 Уровень творчества
         temperature = float(dropdown3) / 10
     # Переводим Символы в Токены Ограничения ответ чата
     max_response_tokens = round(dropdown4 / 1.1)
@@ -41,41 +41,39 @@ def get_inst_response(request: Request):
 
     # Роль чата GPT
     chat_role = (
-        'Представь что ты лучший копирайтер в мире и пишешь лучшие объявления '
-        'для социальной сети Instagram.'
+        'Представь что ты лучший копирайтер в мире и пишешь лучшие '
+        'объявления для социальной сети "Одноклассники".'
     )
-
     # Пользовательский промт
     prompt = (
-        ' Напиши объявление максимально отвечающее требованиям в запросе. '
-        'Текст пиши со смайликами и разбивай на смысловые абзацы. В самом низу'
-        ' добавь хештеги до 5ти слов. Хештеги должны быть релевантные '
-        'содержанию данного объявления. Пиши креативно и разнообразно'
+        ' Напиши объявление для "Одноклассников" максимально отвечающее '
+        'требованиям в запросе. Текст пиши со смайликами и разбивай на '
+        'смысловые абзацы. Пиши креативно и разнообразно'
     )
 
     prompt += (
-        f'. Из этого сделай краткий заголовок 5 слов, для Instagram: '
-        f'{input1}, {input2}'
+        f'. Из этого сделай краткий заголовок 5 слов: [{input1}, {input2}]'
     )
     if input3.strip():
         prompt += f', {input3}'
     if input4.strip():
         prompt += (
-            f'. Далее телефон напиши второй строчкой после заголовка: '
-            f'{input4}'
+            f'. Далее телефон напиши второй строчкой после заголовка: {input4}'
         )
     if textarea1.strip():
-        prompt += f'. Далее пиши дополнительные данные: {textarea1}'
+        prompt += (
+            f'. Далее пиши дополнительные данные: {textarea1}'
+        )
     if input5.strip():
-        prompt += f'. Вставь эти хештеги: {input5}'
+        prompt += f'. Вставь ссылку в конце объявления: {input5}'
     if dropdown1.strip():
         prompt += f'. Пиши текст в: {dropdown1}'
     if dropdown2.strip():
         prompt += f'. Призови: {dropdown2}'
 
     prompt += (
-        f'. Напиши объявления не более: {max_length} символов. Пиши'
-        f'максимально разнообразно.'
+        f'. Напиши объявления не более: {max_length} символов. '
+        f'Пиши максимально разнообразно. Пиши БЕЗ хештегов!.'
     )
 
     # Вызов обработчика GPT3 и возврат результата

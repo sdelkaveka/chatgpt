@@ -1,29 +1,27 @@
-# import asyncio
-
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from prompts.ad.inst import get_inst_response
+from prompts.ad.ok import get_ok_ad_response
+from prompts.ad.tg import get_tg_response
+from prompts.ad.vk import get_vk_ad_response
 from prompts.fairy_tales import get_fairy_tales_response
-from prompts.fix import get_fix_response
-from prompts.improve import get_improve_response
-from prompts.inst import get_inst_response
-from prompts.inst_post import get_inst_post_response
-from prompts.ok_ad import get_ok_ad_response
-from prompts.ok_post import get_ok_post_response
-from prompts.rewrite import get_rewrite_response
-from prompts.short import get_short_response
-from prompts.site_ceo import get_site_ceo_response
-from prompts.site_keywords import get_site_keywords_response
-from prompts.site_struct import get_site_struct_response
-from prompts.site_struct_page import get_site_struct_page_response
-from prompts.site_url import get_site_url_response
-from prompts.text_struct import get_text_struct_response
-from prompts.tg import get_tg_response
-from prompts.tg_post import get_tg_post_response
-from prompts.translate import get_translate_response
-from prompts.vk_ad import get_vk_ad_response
-from prompts.vk_post import get_vk_post_response
+from prompts.posts.inst_post import get_inst_post_response
+from prompts.posts.ok import get_ok_post_response
+from prompts.posts.tg import get_tg_post_response
+from prompts.posts.vk import get_vk_post_response
+from prompts.site.keywords import get_site_keywords_response
+from prompts.site.page_struct_ import get_site_struct_page_response
+from prompts.site.seo import get_site_seo_response
+from prompts.site.struct import get_site_struct_response
+from prompts.site.url import get_site_url_response
+from prompts.tools.fix import get_fix_response
+from prompts.tools.improve import get_improve_response
+from prompts.tools.rewrite import get_rewrite_response
+from prompts.tools.short import get_short_response
+from prompts.tools.text_struct import get_text_struct_response
+from prompts.tools.translate import get_translate_response
 
 
 @api_view(['post'])
@@ -82,7 +80,7 @@ def short(request: Request):
 
 @api_view(['post'])
 def site_ceo(request: Request):
-    result = get_site_ceo_response(request)
+    result = get_site_seo_response(request)
     return Response(result)
 
 
