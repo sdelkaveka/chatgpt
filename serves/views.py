@@ -7,12 +7,12 @@ from prompts.ad.ok import get_ok_ad_response
 from prompts.ad.tg import get_tg_response
 from prompts.ad.vk import get_vk_ad_response
 from prompts.fairy_tales import get_fairy_tales_response
-from prompts.posts.inst_post import get_inst_post_response
+from prompts.posts.inst import get_inst_post_response
 from prompts.posts.ok import get_ok_post_response
 from prompts.posts.tg import get_tg_post_response
 from prompts.posts.vk import get_vk_post_response
 from prompts.site.keywords import get_site_keywords_response
-from prompts.site.page_struct_ import get_site_struct_page_response
+from prompts.site.page_struct import get_site_struct_page_response
 from prompts.site.seo import get_site_seo_response
 from prompts.site.struct import get_site_struct_response
 from prompts.site.url import get_site_url_response
@@ -79,7 +79,7 @@ def short(request: Request):
 
 
 @api_view(['post'])
-def site_ceo(request: Request):
+def site_seo(request: Request):
     result = get_site_seo_response(request)
     return Response(result)
 

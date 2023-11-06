@@ -17,27 +17,29 @@ def get_site_struct_page_response(request: Request):
     # Таймаут при нецензурном слове
     timeout = 5
     model_chat_gpt = 'gpt-3.5-turbo'  # Версия модели чата GPT
+    max_length = 2000
 
     # Получаем JSON-данные из запроса от frontend
     data = request.data
 
     # Извлекаем 'Переменные' из запроса от frontend
-    input1 = data.get('input1', '')            # Название страницы
+    input1 = data.get('input1', '')            # Регион
+    input2 = data.get('input2', '')            # Телефон
     dropdown1 = str(data.get('dropdown1', ''))  # Цель страницы
     dropdown2 = str(data.get('dropdown2', ''))  # Целевая аудитория
-    dropdown3 = str(data.get('dropdown3', ''))  # Основные действия
-    dropdown4 = str(data.get('dropdown4', ''))  # Призыв к действию
-    input2 = data.get('input2', '')            # Регион
-    textarea1 = data.get('textarea1', '')      # Ключевые слова
+    dropdown3 = str(data.get('dropdown3', ''))  # Призыв к действию
+    dropdown4 = str(data.get('dropdown4', ''))  # Стиль
+    textarea1 = data.get('textarea1', '')      # Структура страницы
     textarea2 = data.get('textarea2', '')      # Дополнительные данные
 
     # Выбор Модели чата GPT для обработки данных
-    dropdown5 = str(data.get('dropdown5', ''))    # Версия модели чата GPT
+    dropdown5 = str(data.get('dropdown5', ''))    # Уровень творчества
     if dropdown5.strip():
-        model_chat_gpt = dropdown5                  # Версия модели чата GPT
+        temperature = round(int(dropdown5) / 10)
+    dropdown6 = str(data.get('dropdown6', ''))    # Кол-во симоволв
+    if dropdown6.strip():
+        max_length = int(dropdown6)
 
-    # temperature = round(temperature/10, 1)
-    # Роль чата GPT
     chat_role = (
         'Представь, что ты лучший копирайтер и SEO-специалист, '
         'лучший маркетолог'
@@ -58,24 +60,25 @@ def get_site_struct_page_response(request: Request):
         # Целевая аудитория
         prompt += f'. Целевая аудитория: {dropdown2}'
     if dropdown3.strip():
-        # Основные действия
-        prompt += f'. Основные действия: {dropdown3}'
-    if dropdown4.strip():
         # Призыв к действию
-        prompt += f'. Призыв к действию: {dropdown4}'
+        prompt += f'. Призыв к действию: {dropdown3}'
+    if dropdown4.strip():
+        # Стиль
+        prompt += f'. Стиль: {dropdown4}'
     if input2.strip():
-        prompt += f'. Регион: {input2}' 				# Регион
+        prompt += f'. Телефон: {input2}' 				# Телефон
     if textarea1.strip():
-        # Дополнительные данные
-        prompt += f'. Ключевые слова: [{textarea1}]'
+        # Структура
+        prompt += f'. Структура : [{textarea1}]'
     if textarea2.strip():
-        prompt += f'. {textarea2}' 					# Дополнительные данные
+        # Дополнительные данные
+        prompt += f'. Дополнительные данные: {textarea2}'
 
     prompt += (
         '. Пожалуйста, создай для детальную структуру, заточенную под '
         'релевантные запросы пользователей, на основе предоставленной '
         'информации. Разбей страницу на смысловые блоки и укажи заголовки '
-        'H1 H2 H3.'
+        f'H1 H2 H3. Не используй более {max_length} символов.'
     )
     return handle_gpt3(
         chat_role=chat_role,
