@@ -52,7 +52,6 @@ def get_site_struct_page_response(request: Request):
     )
 
     # Название страницы
-    prompt += f' Название страницы [{input1}]'
     if dropdown1.strip():
         # Цель страницы
         prompt += f'. Цель страницы: {dropdown1}'
@@ -73,6 +72,8 @@ def get_site_struct_page_response(request: Request):
     if textarea2.strip():
         # Дополнительные данные
         prompt += f'. Дополнительные данные: {textarea2}'
+    if input1.strip():
+        prompt += f'. Регион: {input1}'
 
     prompt += (
         '. Пожалуйста, создай для детальную структуру, заточенную под '
