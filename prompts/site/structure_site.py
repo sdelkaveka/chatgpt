@@ -4,7 +4,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_site_struct_response(request: Request):
+def get_structure_site_response(request: Request):
 
     # Токены
     max_role_tokens = 500  # количество токенов роль чата по умолчанию

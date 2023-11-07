@@ -4,7 +4,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_site_url_response(request: Request):
+def get_url_generator_response(request: Request):
 
     max_role_tokens = 100          # Kоличество токенов роль чата по умолчанию
     # Kоличество токенов пользовательского запроса по умолчанию

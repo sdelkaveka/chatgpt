@@ -4,7 +4,7 @@ from rest_framework.request import Request
 from core.gpt import handle_gpt3
 
 
-def get_inst_response(request: Request):
+def get_inst_ad_response(request: Request):
     # Название сервиса
 
     max_role_tokens = 70          # Kоличество токенов роль чата по умолчанию
