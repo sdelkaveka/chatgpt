@@ -1,5 +1,4 @@
 from django.urls import path  # , include
-
 from .views import (corrector, enhance, fairy_tale, inst_ad, inst_post, ok_ad,
                     ok_post, rewrite, shorten, site_keywords,
                     site_seo_optimization, structure_page, structure_site,
