@@ -1,7 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
-
 from prompts.ad.inst import get_inst_ad_response
 from prompts.ad.ok import get_ok_ad_response
 from prompts.ad.tg import get_tg_ad_response
